@@ -1,0 +1,17 @@
+/public/assets/adminlte
+/public/assets/adminLTE
+/storage/app/public
+/public/profiles
+/public/storage
+/storage/*.key
+/node_modules
+/public/hot
+/vendor
+.env
+.env.backup
+.phpunit.result.cache
+docker-compose.override.yml
+Homestead.json
+Homestead.yaml
+npm-debug.log
+yarn-error.log
