@@ -30,20 +30,21 @@
                 <p class="login-box-msg">Faça login para iniciar sua sessão</p>
                 <form  method="POST" action="{{ route('login') }}">
                     @csrf
-                    <div class="form-group has-feedback">
-                        <input id="email" type="text" class="form-control{{ $errors->has('email') ? ' has-error' : '' }}" placeholder="Usuário" name="email" value="{{ old('email') }}" autofocus required="" AUTOCOMPLETE='off'>
+                    <div class="form-group">
+                        <input id="email" type="text" class="form-control" placeholder="Usuário" name="email" value="{{ old('email') }}" autofocus required="" AUTOCOMPLETE='off'>
                         <span class="glyphicon glyphicon-user form-control-feedback"></span>
+                    </div>
+                    <div class="form-group">
+                        <input id="password" type="password" class="form-control" placeholder="Senha" name="password" required="" AUTOCOMPLETE='off'>
+                        <span class="glyphicon glyphicon-lock form-control-feedback"></span>
                         @if ($errors->has('email'))
-                            <span class="invalid-feedback">
-                                <strong>{{ $errors->first('email') }}</strong>
+                            <br/>
+                            <span class="help-block">
+                                <strong><p class="text-red">{{ $errors->first('email') }}</p></strong>
                             </span>
                         @endif
-                    </div>
-                    <div class="form-group has-feedback">
-                        <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' has-error' : '' }}" placeholder="Senha" name="password" required="" AUTOCOMPLETE='off'>
-                        <span class="glyphicon glyphicon-lock form-control-feedback"></span>
                         @if ($errors->has('password'))
-                            <span class="invalid-feedback">
+                            <span class="help-block">
                                 <strong>{{ $errors->first('password') }}</strong>
                             </span>
                         @endif

@@ -9,8 +9,6 @@
 				<a href="{{ route('home') }}" title="Dashboard"><i class="fa fa-dashboard"></i> <span> Dashboard</span></a>
 			</li>
 			
-			@include('layouts.AdminLTE._includes._menu_lateral_auto')
-			
 			@if(Request::segment(1) === 'profile')
 
 			<li class="{{ Request::segment(1) === 'profile' ? 'active' : null }}">

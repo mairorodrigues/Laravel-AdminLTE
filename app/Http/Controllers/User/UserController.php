@@ -146,7 +146,7 @@ class UserController extends Controller
         $user = User::find($id);
 
         if(!$user){
-            $this->flashMessage('warning', 'Usuário não encontrada!', 'danger');            
+            $this->flashMessage('warning', 'Usuário não encontrado!', 'danger');            
             return redirect()->route('user');
         }
 
