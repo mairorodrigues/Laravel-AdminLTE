@@ -80,6 +80,9 @@
 							</tfoot>
 						</table>
 					</div>
+				</div>								
+				<div class="col-md-12 text-center">
+					{{ $roles->links() }}
 				</div>
 			</div>
 		</div>

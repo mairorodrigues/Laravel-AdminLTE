@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use App\Models\Role;
 use App\Models\Permission;
 use Cache;
@@ -11,6 +12,8 @@ use Cache;
 class User extends Authenticatable
 {
     use Notifiable;
+
+    use HasFactory;
 
     /**
      * The attributes that are mass assignable.

@@ -16,7 +16,7 @@ class RoleController extends Controller
     { 
         $this->authorize('show-role', Role::class);
 
-        $roles = Role::all();
+        $roles = Role::paginate(15);
 
         return view('users.roles.index', compact('roles'));
     }

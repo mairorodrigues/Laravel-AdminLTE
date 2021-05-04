@@ -16,7 +16,7 @@ class UserController extends Controller
     { 
         $this->authorize('show-user', User::class);
 
-        $users = User::all();
+        $users = User::paginate(15);
 
         return view('users.index', compact('users'));
     }
