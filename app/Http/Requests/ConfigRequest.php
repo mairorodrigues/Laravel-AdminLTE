@@ -19,10 +19,10 @@ class ConfigRequest extends Request
     public function messages()
     {
         return [
-            'app_name.required'=>'Nome do aplicativo é obrigatório.',
-            'app_name.max'=>'Nome deve ter até 30 caracteres.',
-            'caminho_img_login.image'=>'Deve ser uma imagem.',
-            'favicon.image'=>'Deve ser uma imagem.',
+            'app_name.required'=>'Application name is required.',
+            'app_name.max'=>'Name must be up to 30 characters.',
+            'caminho_img_login.image'=>'Select an image.',
+            'favicon.image'=>'Select an image.',
         ];
     }
 

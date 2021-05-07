@@ -33,15 +33,15 @@
                 @if(Auth::user('name'))
                   {{ Auth::user()->name }}
                 @endif
-                <small>Membro Desde {{ Auth::user()->created_at->format('M Y') }}</small>
+                <small>Member Since {{ Auth::user()->created_at->format('M Y') }}</small>
               </p>
             </li>
             <li class="user-footer">
               <div class="pull-left">
-                <a href="{{ route('profile') }}" class="btn btn-default btn-flat">Perfil</a>
+                <a href="{{ route('profile') }}" class="btn btn-default btn-flat">Profile</a>
               </div>
               <div class="pull-right">
-                <a href="{{ route('logout') }}" class="btn btn-default btn-flat" onclick="event.preventDefault();document.getElementById('logout-form').submit();">Sair</a>
+                <a href="{{ route('logout') }}" class="btn btn-default btn-flat" onclick="event.preventDefault();document.getElementById('logout-form').submit();">Logout</a>
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                     {{ csrf_field() }}
                 </form>

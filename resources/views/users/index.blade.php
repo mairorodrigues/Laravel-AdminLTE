@@ -2,18 +2,18 @@
 
 @section('icon_page', 'user')
 
-@section('title', 'Usuários')
+@section('title', 'Users')
 
 @section('menu_pagina')	
 		
 	<li role="presentation">
 		<a href="{{ route('user.create') }}" class="link_menu_page">
-			<i class="fa fa-plus"></i> Adicionar
+			<i class="fa fa-plus"></i> Add
 		</a>								
 	</li>
 	<li role="presentation">
 		<a href="{{ route('role') }}" class="link_menu_page">
-			<i class="fa fa-unlock-alt"></i> Permissões
+			<i class="fa fa-unlock-alt"></i> Permissions
 		</a>								
 	</li>
 
@@ -29,11 +29,11 @@
 						<table id="tabelapadrao" class="table table-condensed table-bordered table-hover">
 							<thead>
 								<tr>			 
-									<th>Nome</th>			 
+									<th>Name</th>			 
 									<th>E-mail</th>
 									<th class="text-center">Status</th>
-									<th>Criação</th>			 
-									<th class="text-center">Ações</th>			 
+									<th class="text-center">Created</th>			 
+									<th class="text-center">Actions</th>			 
 								</tr>
 							</thead>
 							<tbody>
@@ -51,17 +51,17 @@
 											<td>{{ $user->email }}</td>             
 											<td class="text-center">
 												@if($user->active == true)
-													<span class="label label-success">Ativo</span>
+													<span class="label label-success">Active</span>
 												@else
-													<span class="label label-danger">Inativo</span>
+													<span class="label label-danger">Inactive</span>
 												@endif
 											</td>             
-											<td>{{ $user->created_at->format('d/m/Y H:i') }}</td>             
+											<td class="text-center">{{ $user->created_at->format('d/m/Y H:i') }}</td>             
 											<td class="text-center"> 
-												 <a class="btn btn-default  btn-xs" href="{{ route('user.show', $user->id) }}" title="Visualizar {{ $user->name }}"><i class="fa fa-eye">   </i></a>
-												 <a class="btn btn-primary  btn-xs" href="{{ route('user.edit.password', $user->id) }}" title="Mudar Senha {{ $user->name }}"><i class="fa fa-key"></i></a>
-												 <a class="btn btn-warning  btn-xs" href="{{ route('user.edit', $user->id) }}" title="Editar {{ $user->name }}"><i class="fa fa-pencil"></i></a> 
-												 <a class="btn btn-danger  btn-xs" href="#" title="Excluir {{ $user->name}}" data-toggle="modal" data-target="#modal-delete-{{ $user->id }}"><i class="fa fa-trash"></i></a> 
+												 <a class="btn btn-default  btn-xs" href="{{ route('user.show', $user->id) }}" title="See {{ $user->name }}"><i class="fa fa-eye">   </i></a>
+												 <a class="btn btn-primary  btn-xs" href="{{ route('user.edit.password', $user->id) }}" title="Change Password {{ $user->name }}"><i class="fa fa-key"></i></a>
+												 <a class="btn btn-warning  btn-xs" href="{{ route('user.edit', $user->id) }}" title="Edit {{ $user->name }}"><i class="fa fa-pencil"></i></a> 
+												 <a class="btn btn-danger  btn-xs" href="#" title="Delete {{ $user->name}}" data-toggle="modal" data-target="#modal-delete-{{ $user->id }}"><i class="fa fa-trash"></i></a> 
 											</td> 
 										</tr>
 										<div class="modal fade" id="modal-delete-{{ $user->id }}">
@@ -71,14 +71,14 @@
 														<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 															<span aria-hidden="true">×</span>
 														</button>
-														<h4 class="modal-title"><i class="fa fa-warning"></i> Atenção!</h4>
+														<h4 class="modal-title"><i class="fa fa-warning"></i> Caution!!</h4>
 													</div>
 													<div class="modal-body">
-														<p>Deseja realmente exlcuir ({{ $user->name }}) ?</p>
+														<p>Do you really want to delete ({{ $user->name }}) ?</p>
 													</div>
 													<div class="modal-footer">
-														<button type="button" class="btn btn-default pull-left" data-dismiss="modal">Cancelar</button>
-														<a href="{{ route('user.destroy', $user->id) }}"><button type="button" class="btn btn-danger"><i class="fa fa-trash"></i> Excluir</button></a>
+														<button type="button" class="btn btn-default pull-left" data-dismiss="modal">Cancel</button>
+														<a href="{{ route('user.destroy', $user->id) }}"><button type="button" class="btn btn-danger"><i class="fa fa-trash"></i> Delete</button></a>
 													</div>
 												</div>
 											</div>
@@ -88,11 +88,11 @@
 							</tbody>
 							<tfoot>
 								<tr>		 
-									<th>Nome</th>			 
-									<th>E-mail</th>			 
-									<th class="text-center">Status</th>			 
-									<th>Criação</th>			 
-									<th class="text-center">Ações</th>			 
+									<th>Name</th>			 
+									<th>E-mail</th>
+									<th class="text-center">Status</th>
+									<th class="text-center">Created</th>			 
+									<th class="text-center">Actions</th>			 
 								</tr>
 							</tfoot>
 						</table>

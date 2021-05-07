@@ -42,13 +42,13 @@ class PermissionRoleTablesSeeder extends Seeder
     private function createRoles()
     {
         Role::create([
-            'name' => 'Desenvolvedor', 
-            'label'  => 'Desenvolvedor do sistema'
+            'name' => 'Developer', 
+            'label'  => 'System Developer'
         ]);       
 
         Role::create([
-            'name' => 'Administradores', 
-            'label'  => 'Administradores do Sistema'
+            'name' => 'Administrators', 
+            'label'  => 'System Administrators'
         ]); 
 
         $this->command->info('Roles created!');
@@ -57,19 +57,19 @@ class PermissionRoleTablesSeeder extends Seeder
     private function createPermissionGroups()
     {
         PermissionGroup::create([
-            'name' => 'Configurações de Desenvolvedor', //1
+            'name' => 'Developer Settings', //1
         ]);
 
         PermissionGroup::create([
-            'name' => 'Configurações do Sistema', //2
+            'name' => 'System Settings', //2
         ]);       
 
         PermissionGroup::create([
-            'name' => 'Usuários', //3
+            'name' => 'Users', //3
         ]); 
 
         PermissionGroup::create([
-            'name' => 'Permissões', //4
+            'name' => 'Permissions', //4
         ]);
 
         $this->command->info('Permission Groups created!');
@@ -80,61 +80,61 @@ class PermissionRoleTablesSeeder extends Seeder
         Permission::create([
             'permission_group_id' => '1', 
             'name' => 'root-dev', 
-            'label'  => 'Permissão de Desenvolvedor'
+            'label'  => 'Developer Permission'
         ]);
 
     	Permission::create([
             'permission_group_id' => '2', 
             'name' => 'edit-config', 
-            'label'  => 'Editar Configurações do Sistema'
+            'label'  => 'Edit System Settings'
         ]);       
 
         Permission::create([
             'permission_group_id' => '3', 
             'name' => 'show-user', 
-            'label'  => 'Visualizar Usuário'
+            'label'  => 'View User'
         ]); 
 
         Permission::create([
             'permission_group_id' => '3',
             'name' => 'create-user', 
-            'label'  => 'Adicionar Usuário'
+            'label'  => 'Add User'
         ]);
 
         Permission::create([
             'permission_group_id' => '3',
             'name' => 'edit-user', 
-            'label'  => 'Editar Usuário'
+            'label'  => 'Edit User'
         ]);
 
         Permission::create([
             'permission_group_id' => '3',
             'name' => 'destroy-user', 
-            'label'  => 'Excluir Usuário'
+            'label'  => 'Delete User'
         ]); 
 
         Permission::create([
             'permission_group_id' => '4',
             'name' => 'show-role', 
-            'label'  => 'Visualizar Permissão'
+            'label'  => 'View Permission'
         ]);
 
         Permission::create([
             'permission_group_id' => '4',
             'name' => 'create-role', 
-            'label'  => 'Adicionar Permissão'
+            'label'  => 'Add Permission'
         ]);
 
         Permission::create([
             'permission_group_id' => '4',
             'name' => 'edit-role', 
-            'label'  => 'Editar Permissão'
+            'label'  => 'Edit Permission'
         ]);
 
         Permission::create([
             'permission_group_id' => '4',
             'name' => 'destroy-role', 
-            'label'  => 'Excluir Permissão'
+            'label'  => 'Delete Permission'
         ]); 
 
         $this->command->info('Permissions created!');

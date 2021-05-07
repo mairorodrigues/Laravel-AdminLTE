@@ -11,7 +11,6 @@ use App\Http\Requests\Profile\UpdateProfileRequest;
 use App\Http\Requests\Profile\UpdatePasswordProfileRequest; 
 use App\Http\Requests\Profile\UpdateAvatarProfileRequest; 
 
-//use App\Models\Perfil\Perfil; 
 
 class ProfileController extends Controller 
 { 
@@ -36,18 +35,18 @@ class ProfileController extends Controller
     	$user = User::find($id);
 
         if(!$user){
-        	$this->flashMessage('warning', 'Usuário não encontrado!', 'danger');            
+        	$this->flashMessage('warning', 'User not found!', 'danger');            
             return redirect()->route('user');
         }
 
         if($user != Auth::user()){
-    		$this->flashMessage('warning', 'Erro ao atualizar perfil!', 'danger');            
+    		$this->flashMessage('warning', 'Error updating profile!', 'danger');            
             return redirect()->route('profile');
     	}
 
         $user->update($request->all());        
 
-        $this->flashMessage('check', 'Perfil atualizado com Sucesso!', 'success');
+        $this->flashMessage('check', 'Profile updated successfully!', 'success');
 
         return redirect()->route('profile');
     }
@@ -57,12 +56,12 @@ class ProfileController extends Controller
     	$user = User::find($id);    	
 
         if(!$user){
-        	$this->flashMessage('warning', 'Usuário não encontrado!', 'danger');            
+        	$this->flashMessage('warning', 'User not found!', 'danger');            
             return redirect()->route('user');
         }
 
         if($user != Auth::user()){
-    		$this->flashMessage('warning', 'Erro ao atualizar senha!', 'danger');            
+    		$this->flashMessage('warning', 'Error updating password!', 'danger');            
             return redirect()->route('profile');
     	}
 
@@ -70,7 +69,7 @@ class ProfileController extends Controller
 
         $user->update($request->all());
 
-        $this->flashMessage('check', 'Senha atualizada com sucesso!', 'success');
+        $this->flashMessage('check', 'Password updated successfully!', 'success');
 
         return redirect()->route('profile');
     }
@@ -80,12 +79,12 @@ class ProfileController extends Controller
     	$user = User::find($id);    	
 
         if(!$user){
-        	$this->flashMessage('warning', 'Usuário não encontrado!', 'danger');            
+        	$this->flashMessage('warning', 'User not found!', 'danger');            
             return redirect()->route('user');
         }
 
         if($user != Auth::user()){
-    		$this->flashMessage('warning', 'Erro ao atualizar avatar!', 'danger');            
+    		$this->flashMessage('warning', 'Error updating avatar!', 'danger');            
             return redirect()->route('profile');
     	}
 
@@ -100,7 +99,7 @@ class ProfileController extends Controller
     		User::where('id', $id)->update(['avatar' => "profiles/$id/avatar.{$ext}"]);
     	}
 
-        $this->flashMessage('check', 'Avatar atualizado com sucesso!', 'success');
+        $this->flashMessage('check', 'Avatar updated successfully!', 'success');
 
         return redirect()->route('profile');
     }

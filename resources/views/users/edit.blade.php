@@ -2,13 +2,13 @@
 
 @section('icon_page', 'pencil')
 
-@section('title', 'Editar Usuário')
+@section('title', 'Edit User')
 
 @section('menu_pagina')	
 		
 	<li role="presentation">
 		<a href="{{ route('user') }}" class="link_menu_page">
-			<i class="fa fa-user"></i> Usuários
+			<i class="fa fa-user"></i> Users
 		</a>								
 	</li>
 
@@ -26,8 +26,8 @@
                             <div class="row">
                                 <div class="col-lg-6">
                                     <div class="form-group {{ $errors->has('name') ? 'has-error' : '' }}">
-                                        <label for="nome">Nome</label>
-                                        <input type="text" name="name" class="form-control" maxlength="30" minlength="4" placeholder="Nome" required="" autofocus value="{{$user->name}}">
+                                        <label for="nome">Name</label>
+                                        <input type="text" name="name" class="form-control" maxlength="30" minlength="4" placeholder="Name" required="" autofocus value="{{$user->name}}">
                                         @if($errors->has('name'))
                                             <span class="help-block">
                                                 <strong>{{ $errors->first('name') }}</strong>
@@ -48,8 +48,8 @@
                                 </div>
                                 <div class="col-lg-12">
                                     <div class="form-group {{ $errors->has('roles') ? 'has-error' : '' }}">
-                                        <label for="nome">Grupo de permissão</label>
-                                        <select name="roles[]" class="form-control select2" multiple="multiple" data-placeholder="Grupos de Permissões">
+                                        <label for="nome">Permission Group</label>
+                                        <select name="roles[]" class="form-control select2" multiple="multiple" data-placeholder="Permission Group">
                                             @foreach($roles as $role)
                                                 @if($role->id != 1)
                                                     @if(in_array($role->id, $roles_ids))
@@ -76,12 +76,12 @@
                                                 checked
                                             @endif
                                             >
-                                            Ativo
+                                            Active
                                         </label>
                                     </div>
                                 </div> 
                                 <div class="col-lg-6">
-                                   <button type="submit" class="btn btn-primary pull-right"><i class="fa fa-fw fa-save"></i> Salvar Alterações</button>
+                                   <button type="submit" class="btn btn-primary pull-right"><i class="fa fa-fw fa-save"></i> Save</button>
                                 </div>
                             </div>
                         </form>
@@ -100,7 +100,7 @@
             $('.select2').select2({
                 "language": {
                     "noResults": function(){
-                        return "Nenhum registro encontrado.";
+                        return "No records found.";
                     }
                 }
             });

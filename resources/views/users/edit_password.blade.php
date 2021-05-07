@@ -2,13 +2,13 @@
 
 @section('icon_page', 'pencil')
 
-@section('title', 'Editar Senha de Usuário')
+@section('title', 'Edit User Password')
 
 @section('menu_pagina')	
 		
 	<li role="presentation">
 		<a href="{{ route('user') }}" class="link_menu_page">
-			<i class="fa fa-user"></i> Usuários
+			<i class="fa fa-user"></i> Users
 		</a>								
 	</li>
 
@@ -26,8 +26,8 @@
                             <div class="row">                            
                                 <div class="col-lg-6">
                                     <div class="form-group {{ $errors->has('password') ? 'has-error' : '' }}">
-                                        <label for="nome">Senha</label>
-                                        <input type="password" name="password" class="form-control" placeholder="Senha" minlength="6" required="">
+                                        <label for="nome">Password</label>
+                                        <input type="password" name="password" class="form-control" placeholder="Password" minlength="6" required="">
                                         @if($errors->has('password'))
                                             <span class="help-block">
                                                 <strong>{{ $errors->first('password') }}</strong>
@@ -37,8 +37,8 @@
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="form-group {{ $errors->has('password-confirm') ? 'has-error' : '' }}">
-                                        <label for="nome">Confirmar Senha</label>
-                                        <input type="password" name="password_confirmation" class="form-control" placeholder="Confirmar Senha" minlength="6" required="">
+                                        <label for="nome">Confirm Password</label>
+                                        <input type="password" name="password_confirmation" class="form-control" placeholder="Confirm Password" minlength="6" required="">
                                         @if($errors->has('password-confirm'))
                                             <span class="help-block">
                                                 <strong>{{ $errors->first('password-confirm') }}</strong>
@@ -48,10 +48,10 @@
                                 </div>
                                 <div class="col-lg-12"></div>
                                 <div class="col-lg-6">
-                                    <p class="text-muted"><b><i class="fa fa-warning"></i></b> Editando senha de <b>{{ $user->name }}</b>.</p>
+                                    <p class="text-muted"><b><i class="fa fa-warning"></i></b> Editing password <b>{{ $user->name }}</b>.</p>
                                 </div> 
                                 <div class="col-lg-6">
-                                   <button type="submit" class="btn btn-primary pull-right"><i class="fa fa-fw fa-save"></i> Salvar Alterações</button>
+                                   <button type="submit" class="btn btn-primary pull-right"><i class="fa fa-fw fa-save"></i> Save</button>
                                 </div>
                             </div>
                         </form>

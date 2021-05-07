@@ -28,7 +28,7 @@ class UserController extends Controller
     	$user = User::find($id);
 
     	if(!$user){
-        	$this->flashMessage('warning', 'Usuário não encontrado!', 'danger');            
+        	$this->flashMessage('warning', 'User not found!', 'danger');            
             return redirect()->route('user');
         }  
 
@@ -60,7 +60,7 @@ class UserController extends Controller
 
         $user->roles()->sync($roles);
 
-        $this->flashMessage('check', 'Usuário adicionado com Sucesso!', 'success');
+        $this->flashMessage('check', 'User successfully added!', 'success');
 
         return redirect()->route('user.create');
     }
@@ -72,7 +72,7 @@ class UserController extends Controller
     	$user = User::find($id);
 
     	if(!$user){
-        	$this->flashMessage('warning', 'Usuário não encontrado!', 'danger');            
+        	$this->flashMessage('warning', 'User not found!', 'danger');            
             return redirect()->route('user');
         }  
 
@@ -90,7 +90,7 @@ class UserController extends Controller
     	$user = User::find($id);
 
         if(!$user){
-        	$this->flashMessage('warning', 'Usuário não encontrado!', 'danger');            
+        	$this->flashMessage('warning', 'User not found!', 'danger');            
             return redirect()->route('user');
         }
 
@@ -100,7 +100,7 @@ class UserController extends Controller
 
         $user->roles()->sync($roles);
 
-        $this->flashMessage('check', 'Usuário atualizado com Sucesso!', 'success');
+        $this->flashMessage('check', 'User updated successfully!', 'success');
 
         return redirect()->route('user');
     }
@@ -112,7 +112,7 @@ class UserController extends Controller
     	$user = User::find($id);
 
         if(!$user){
-        	$this->flashMessage('warning', 'Usuário não encontrado!', 'danger');            
+        	$this->flashMessage('warning', 'User not found!', 'danger');            
             return redirect()->route('user');
         }
 
@@ -120,7 +120,7 @@ class UserController extends Controller
 
         $user->update($request->all());
 
-        $this->flashMessage('check', 'Senha de usuário atualizada com sucesso!', 'success');
+        $this->flashMessage('check', 'User password updated successfully!', 'success');
 
         return redirect()->route('user');
     }
@@ -132,7 +132,7 @@ class UserController extends Controller
     	$user = User::find($id);
 
     	if(!$user){
-        	$this->flashMessage('warning', 'Usuário não encontrado!', 'danger');            
+        	$this->flashMessage('warning', 'User not found!', 'danger');            
             return redirect()->route('user');
         }              	               
 
@@ -146,13 +146,13 @@ class UserController extends Controller
         $user = User::find($id);
 
         if(!$user){
-            $this->flashMessage('warning', 'Usuário não encontrado!', 'danger');            
+            $this->flashMessage('warning', 'User not found!', 'danger');            
             return redirect()->route('user');
         }
 
         $user->delete();
 
-        $this->flashMessage('check', 'Usuário deletado com Sucesso!', 'success');
+        $this->flashMessage('check', 'User successfully deleted!', 'success');
 
         return redirect()->route('user');
     }

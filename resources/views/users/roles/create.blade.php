@@ -2,13 +2,13 @@
 
 @section('icon_page', 'plus')
 
-@section('title', 'Adicionar Permissão')
+@section('title', 'Add Permission')
 
 @section('menu_pagina')	
 		
 	<li role="presentation">
 		<a href="{{ route('role') }}" class="link_menu_page">
-			<i class="fa fa-unlock-alt"></i> Permissões
+			<i class="fa fa-unlock-alt"></i> Permissions
 		</a>								
 	</li>
 
@@ -26,8 +26,8 @@
                         <div class="row">
                             <div class="col-lg-6">
                                 <div class="form-group {{ $errors->has('name') ? 'has-error' : '' }}">
-                                    <label for="nome">Nome</label>
-                                    <input type="text" name="name" class="form-control" maxlength="30" minlength="4" placeholder="Nome" required="" value="{{ old('name') }}" autofocus>
+                                    <label for="nome">Name</label>
+                                    <input type="text" name="name" class="form-control" maxlength="30" minlength="4" placeholder="Name" required="" value="{{ old('name') }}" autofocus>
                                     @if($errors->has('name'))
                                         <span class="help-block">
                                             <strong>{{ $errors->first('name') }}</strong>
@@ -37,8 +37,8 @@
                             </div>
                             <div class="col-lg-6">
                                 <div class="form-group {{ $errors->has('label') ? 'has-error' : '' }}">
-                                    <label for="nome">Descrição</label>
-                                    <input type="text" name="label" class="form-control" placeholder="Descrição" required="" value="{{ old('label') }}">
+                                    <label for="nome">Description</label>
+                                    <input type="text" name="label" class="form-control" placeholder="Description" required="" value="{{ old('label') }}">
                                     @if($errors->has('label'))
                                         <span class="help-block">
                                             <strong>{{ $errors->first('label') }}</strong>
@@ -47,7 +47,7 @@
                                 </div>
                             </div>                            
                             <div class="col-lg-12">
-                                <label for="nome">Permissões</label>
+                                <label for="nome">Permissions</label>
                                 @foreach($permission_groups as $permission_group)
                                     @if($permission_group->id > 1)               
                                         <div class="panel box box-default">
@@ -73,7 +73,7 @@
                             </div>
                             <div class="col-lg-6"></div> 
                             <div class="col-lg-6">
-                               <button type="submit" class="btn btn-primary pull-right"><i class="fa fa-fw fa-plus"></i> Adicionar</button>
+                               <button type="submit" class="btn btn-primary pull-right"><i class="fa fa-fw fa-plus"></i> Add</button>
                             </div>
                         </div>
                     </form>

@@ -2,18 +2,18 @@
 
 @section('icon_page', 'unlock-alt')
 
-@section('title', 'Permissões')
+@section('title', 'Permissions')
 
 @section('menu_pagina')	
 		
 	<li role="presentation">
 		<a href="{{ route('role.create') }}" class="link_menu_page">
-			<i class="fa fa-plus"></i> Adicionar
+			<i class="fa fa-plus"></i> Add
 		</a>								
 	</li>
 	<li role="presentation">
 		<a href="{{ route('user') }}" class="link_menu_page">
-			<i class="fa fa-user"></i> Usuários
+			<i class="fa fa-user"></i> Users
 		</a>								
 	</li>
 
@@ -29,10 +29,10 @@
 						<table id="tabelapadrao" class="table table-condensed table-bordered table-hover">
 							<thead>
 								<tr>			 
-									<th>Nome</th>			 
-									<th>Descrição</th>
-									<th>Criação</th>			 
-									<th class="text-center">Ações</th>			 
+									<th>Name</th>			 
+									<th>Description</th>
+									<th>Created</th>			 
+									<th class="text-center">Actions</th>			 
 								</tr>
 							</thead>
 							<tbody>
@@ -43,9 +43,9 @@
 											<td>{{ $role->label }}</td>               
 											<td>{{ $role->created_at->format('d/m/Y H:i') }}</td>             
 											<td class="text-center"> 
-												 <a class="btn btn-default  btn-xs" href="{{ route('role.show', $role->id) }}" title=Visualizar {{ $role->name }}"><i class="fa fa-eye">   </i></a>						 
-												 <a class="btn btn-warning  btn-xs" href="{{ route('role.edit', $role->id) }}" title="Editar {{ $role->name }}"><i class="fa fa-pencil"></i></a>
-												 <a class="btn btn-danger  btn-xs" href="#" title="Excluir {{ $role->name}}" data-toggle="modal" data-target="#modal-delete-{{ $role->id }}"><i class="fa fa-trash"></i></a>
+												 <a class="btn btn-default  btn-xs" href="{{ route('role.show', $role->id) }}" title=See {{ $role->name }}"><i class="fa fa-eye">   </i></a>						 
+												 <a class="btn btn-warning  btn-xs" href="{{ route('role.edit', $role->id) }}" title="Edit {{ $role->name }}"><i class="fa fa-pencil"></i></a>
+												 <a class="btn btn-danger  btn-xs" href="#" title="Delete {{ $role->name}}" data-toggle="modal" data-target="#modal-delete-{{ $role->id }}"><i class="fa fa-trash"></i></a>
 											</td> 
 										</tr>
 										<div class="modal fade" id="modal-delete-{{ $role->id }}">
@@ -55,14 +55,14 @@
 														<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 															<span aria-hidden="true">×</span>
 														</button>
-														<h4 class="modal-title"><i class="fa fa-warning"></i> Atenção!</h4>
+														<h4 class="modal-title"><i class="fa fa-warning"></i> Caution!!</h4>
 													</div>
 													<div class="modal-body">
-														<p>Deseja realmente exlcuir ({{ $role->name }}) ?</p>
+														<p>Do you really want to delete ({{ $role->name }}) ?</p>
 													</div>
 													<div class="modal-footer">
-														<button type="button" class="btn btn-default pull-left" data-dismiss="modal">Cancelar</button>
-														<a href="{{ route('role.destroy', $role->id) }}" ><button type="button" class="btn btn-danger"><i class="fa fa-trash"></i> Excluir</button></a>
+														<button type="button" class="btn btn-default pull-left" data-dismiss="modal">Cancel</button>
+														<a href="{{ route('role.destroy', $role->id) }}" ><button type="button" class="btn btn-danger"><i class="fa fa-trash"></i> Delete</button></a>
 													</div>
 												</div>
 											</div>
@@ -72,10 +72,10 @@
 							</tbody>
 							<tfoot>
 								<tr>		 
-									<th>Nome</th>			 
-									<th>Descrição</th>			 		 
-									<th>Criação</th>			 
-									<th class="text-center">Ações</th>			 
+									<th>Name</th>			 
+									<th>Description</th>
+									<th>Created</th>			 
+									<th class="text-center">Actions</th>			 
 								</tr>
 							</tfoot>
 						</table>

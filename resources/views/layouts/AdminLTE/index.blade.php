@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
     <head>
         @include('layouts.AdminLTE._includes._head')
     </head>

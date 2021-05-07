@@ -14,14 +14,14 @@ class StoreRoleRequest extends Request
 	public function messages() 
 	{ 
 		return [ 
-			//'email.unique'=>'E-mail já cadastrado no sistema.', 
+			
 		]; 
 	} 
 
 	public function rules() 
 	{ 
 		return [ 
-			//'name' => 'required|string|min:4|max:255',
+			
 		]; 
 	} 
 }

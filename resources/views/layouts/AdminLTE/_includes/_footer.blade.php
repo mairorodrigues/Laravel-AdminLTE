@@ -7,28 +7,28 @@
 			$ano = date('Y');
 
 			$semana = array(
-				'Sun' => 'Domingo', 
-				'Mon' => 'Segunda-Feira',
-				'Tue' => 'Terça-Feira',
-				'Wed' => 'Quarta-Feira',
-				'Thu' => 'Quinta-Feira',
-				'Fri' => 'Sexta-Feira',
-				'Sat' => 'Sábado'
+				'Sun' => 'Sunday', 
+				'Mon' => 'Monday',
+				'Tue' => 'Tuesday',
+				'Wed' => 'Wednesday',
+				'Thu' => 'Thursday',
+				'Fri' => 'Friday',
+				'Sat' => 'Saturday'
 			);
 
 			$mes_extenso = array(
-				'Jan' => 'Janeiro',
-				'Feb' => 'Fevereiro',
-				'Mar' => 'Março',
-				'Apr' => 'Abril',
-				'May' => 'Maio',
-				'Jun' => 'Junho',
-				'Jul' => 'Julho',
-				'Aug' => 'Agosto',
-				'Nov' => 'Novembro',
-				'Sep' => 'Setembro',
-				'Oct' => 'Outubro',
-				'Dec' => 'Dezembro'
+				'Jan' => 'January',
+				'Feb' => 'February',
+				'Mar' => 'March',
+				'Apr' => 'April',
+				'May' => 'May',
+				'Jun' => 'June',
+				'Jul' => 'July',
+				'Aug' => 'August',
+				'Nov' => 'November',
+				'Sep' => 'September',
+				'Oct' => 'October',
+				'Dec' => 'December'
 			);
 
 			echo "<b>".$semana["$data"] . ", {$dia} de " . $mes_extenso["$mes"] . " de {$ano}.</b>";

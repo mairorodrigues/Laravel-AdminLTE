@@ -28,7 +28,7 @@ class RoleController extends Controller
         $role = Role::find($id);
 
         if(!$role){
-            $this->flashMessage('warning', 'Permissão não encontrada!', 'danger');            
+            $this->flashMessage('warning', 'Permission not found!', 'danger');            
             return redirect()->route('role');
         }  
 
@@ -58,7 +58,7 @@ class RoleController extends Controller
 
         $role->permissions()->sync($permissions);
 
-        $this->flashMessage('check', 'Permissão adicionada com Sucesso!', 'success');
+        $this->flashMessage('check', 'Permission successfully added!', 'success');
 
         return redirect()->route('role.create');
     }
@@ -70,7 +70,7 @@ class RoleController extends Controller
         $role = Role::find($id);
 
         if(!$role){
-            $this->flashMessage('warning', 'Permissão não encontrada!', 'danger');            
+            $this->flashMessage('warning', 'Permission not found!', 'danger');            
             return redirect()->route('role');
         }  
 
@@ -88,7 +88,7 @@ class RoleController extends Controller
         $role = Role::find($id);
 
         if(!$role){
-            $this->flashMessage('warning', 'Permissão não encontrada!', 'danger');            
+            $this->flashMessage('warning', 'Permission not found!', 'danger');            
             return redirect()->route('role');
         }
 
@@ -98,7 +98,7 @@ class RoleController extends Controller
 
         $role->permissions()->sync($permissions);
 
-        $this->flashMessage('check', 'Permissão atualizada com Sucesso!', 'success');
+        $this->flashMessage('check', 'Permission successfully updated!', 'success');
 
         return redirect()->route('role');
     }
@@ -116,7 +116,7 @@ class RoleController extends Controller
 
         $role->delete();
 
-        $this->flashMessage('check', 'Permissão deletada com Sucesso!', 'success');
+        $this->flashMessage('check', 'Permission successfully deleted!', 'success');
 
         return redirect()->route('role');
     }

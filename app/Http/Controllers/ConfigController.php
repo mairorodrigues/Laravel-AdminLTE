@@ -39,7 +39,7 @@ class ConfigController extends Controller
     		Config::where('id', 1)->update(['favicon' => "img/config/favicon.{$ext}"]);
     	}
 
-        $this->flashMessage('check', 'Configurações do aplicativo atualizadas com sucesso!', 'success');
+        $this->flashMessage('check', 'Application settings updated successfully!', 'success');
 
     	return redirect()->route('config');
     }

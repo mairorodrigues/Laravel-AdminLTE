@@ -14,7 +14,7 @@ class UpdateUserRequest extends Request
 	public function messages() 
 	{ 
 		return [ 
-			'email.unique'=>'E-mail já cadastrado no sistema.', 
+			'email.unique'=>'E-mail already registered in the system.', 
 		]; 
 	} 
 

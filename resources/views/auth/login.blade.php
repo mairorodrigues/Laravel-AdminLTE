@@ -9,7 +9,7 @@
 @stop
 
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
     <head>
 
         @include('layouts.AdminLTE._includes._head')
@@ -27,7 +27,7 @@
                 {!! \App\Models\Config::find(1)->titulo_login !!}             
             </div>
             <div class="login-box-body">
-                <p class="login-box-msg">Faça login para iniciar sua sessão</p>
+                <p class="login-box-msg">Sign in to start your session</p>
                 <form  method="POST" action="{{ route('login') }}">
                     @csrf
                     <div class="form-group has-feedback">
@@ -53,19 +53,19 @@
                         <!--<div class="col-xs-8">
                           <div class="checkbox icheck">
                             <label>
-                              <input name="remember" type="checkbox" {{ old('remember') ? 'checked' : '' }}> Lembrar-me
+                              <input name="remember" type="checkbox" {{ old('remember') ? 'checked' : '' }}> Remember me
                             </label>
                           </div>
                         </div>-->
                         <div class="col-xs-12">
-                          <button type="submit" class="btn btn-primary btn-block btn-flat">Entrar</button>
+                          <button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
                         </div>  
                         <br/><br/><br/>
                         <!--<div class="col-xs-12">
                             <center>
-                                <a href="{{ route('password.request') }}">Esqueceu a senha?</a>
+                                <a href="{{ route('password.request') }}">Forgot password?</a>
                                 <br/>
-                                <a href="{{ route('register') }}">Cadastrar-se</a>
+                                <a href="{{ route('register') }}">Sign up</a>
                             </center> -->                     
                         </div>
                     </div>                  

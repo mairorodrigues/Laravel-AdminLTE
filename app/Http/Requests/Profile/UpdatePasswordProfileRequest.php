@@ -14,7 +14,7 @@ class UpdatePasswordProfileRequest extends Request
 	public function messages() 
 	{ 
 		return [ 
-			//'email.unique'=>'E-mail já cadastrado no sistema.', 
+			 
 		]; 
 	} 
 

@@ -2,7 +2,7 @@
 
 @section('icon_page', 'user') 
 
-@section('title', 'Perfil de Usuário') 
+@section('title', 'User Profile') 
 
 @section('content') 
 
@@ -31,8 +31,8 @@
 	<div class="col-md-9">
 		<div class="nav-tabs-custom">
 			<ul class="nav nav-tabs">
-				<li class="active"><a href="#profile" data-toggle="tab"><i class="fa fa-fw fa-user"></i> Perfil</a></li>
-				<li><a href="#settings" data-toggle="tab"><i class="fa fa-fw fa-key"></i> Senha</a></li>
+				<li class="active"><a href="#profile" data-toggle="tab"><i class="fa fa-fw fa-user"></i> Profiel</a></li>
+				<li><a href="#settings" data-toggle="tab"><i class="fa fa-fw fa-key"></i> Password</a></li>
 				<li><a href="#avatar" data-toggle="tab"><i class="fa fa-fw fa-file-photo-o"></i> Avatar</a></li>
 			</ul>
 			<div class="tab-content">
@@ -41,8 +41,8 @@
                         {{ csrf_field() }}
                         <input type="hidden" name="_method" value="put">
 						<div class="form-group {{ $errors->has('name') ? 'has-error' : '' }}">
-                            <label for="nome">Nome</label>
-                            <input type="text" name="name" class="form-control" maxlength="30" minlength="4" placeholder="Nome" required="" value="{{$user->name}}">
+                            <label for="nome">Name</label>
+                            <input type="text" name="name" class="form-control" maxlength="30" minlength="4" placeholder="Name" required="" value="{{$user->name}}">
                             @if($errors->has('name'))
                                 <span class="help-block">
                                     <strong>{{ $errors->first('name') }}</strong>
@@ -59,7 +59,7 @@
                             @endif
                         </div>	
                         <div class="form-group text-right">
-                           <button type="submit" class="btn btn-primary"><i class="fa fa-fw fa-save"></i> Salvar Perfil</button>
+                           <button type="submit" class="btn btn-primary"><i class="fa fa-fw fa-save"></i> Save Profile</button>
                         </div>
 					</form>						
 				</div>
@@ -68,8 +68,8 @@
                         {{ csrf_field() }}
                         <input type="hidden" name="_method" value="put">
 						<div class="form-group {{ $errors->has('password') ? 'has-error' : '' }}">
-                            <label for="nome">Senha</label>
-                            <input type="password" name="password" class="form-control" placeholder="Senha" minlength="6" required="">
+                            <label for="nome">Password</label>
+                            <input type="password" name="password" class="form-control" placeholder="Password" minlength="6" required="">
                             @if($errors->has('password'))
                                 <span class="help-block">
                                     <strong>{{ $errors->first('password') }}</strong>
@@ -77,8 +77,8 @@
                             @endif
                         </div>
 						<div class="form-group {{ $errors->has('password-confirm') ? 'has-error' : '' }}">
-                            <label for="nome">Confirmar Senha</label>
-                            <input type="password" name="password_confirmation" class="form-control" placeholder="Confirmar Senha" minlength="6" required="">
+                            <label for="nome">Confirm Password</label>
+                            <input type="password" name="password_confirmation" class="form-control" placeholder="Confirm Password" minlength="6" required="">
                             @if($errors->has('password-confirm'))
                                 <span class="help-block">
                                     <strong>{{ $errors->first('password-confirm') }}</strong>
@@ -86,7 +86,7 @@
                             @endif
                         </div>	
                         <div class="form-group text-right">
-                           <button type="submit" class="btn btn-primary"><i class="fa fa-fw fa-save"></i> Salvar Senha</button>
+                           <button type="submit" class="btn btn-primary"><i class="fa fa-fw fa-save"></i> Save Password</button>
                         </div>
 					</form>						
 				</div>
@@ -104,7 +104,7 @@
                             @endif
                         </div>	
                         <div class="form-group text-right">
-                           <button type="submit" class="btn btn-primary"><i class="fa fa-fw fa-save"></i> Salvar Avatar</button>
+                           <button type="submit" class="btn btn-primary"><i class="fa fa-fw fa-save"></i> Save Avatar</button>
                         </div>
                     </form>
 				</div>
