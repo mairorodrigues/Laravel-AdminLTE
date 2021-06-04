@@ -2,6 +2,7 @@
 
 Start a new Laravel 8 project with the AdminLTE template installed.
 
+<img src="public/img/config/dashboard.png">
 
 # Installation
 
