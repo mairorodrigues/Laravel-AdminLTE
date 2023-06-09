@@ -31,11 +31,11 @@
                 <form  method="POST" action="{{ route('login') }}">
                     @csrf
                     <div class="form-group has-feedback">
-                        <input id="email" type="text" class="form-control" placeholder="Usuário" name="email" value="{{ old('email') }}" autofocus required="" AUTOCOMPLETE='off'>
-                        <span class="glyphicon glyphicon-user form-control-feedback"></span>
+                        <input id="email" type="email" class="form-control" placeholder="E-mail" name="email" value="{{ old('email') }}" autofocus required="" AUTOCOMPLETE='off'>
+                        <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
                     </div>
                     <div class="form-group has-feedback">
-                        <input id="password" type="password" class="form-control" placeholder="Senha" name="password" required="" AUTOCOMPLETE='off'>
+                        <input id="password" type="password" class="form-control" placeholder="Password" name="password" required="" AUTOCOMPLETE='off'>
                         <span class="glyphicon glyphicon-lock form-control-feedback"></span>
                         @if ($errors->has('email'))
                             <br/>
@@ -61,12 +61,12 @@
                           <button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
                         </div>  
                         <br/><br/><br/>
-                        <!--<div class="col-xs-12">
+                        <div class="col-xs-12">
                             <center>
                                 <a href="{{ route('password.request') }}">Forgot password?</a>
                                 <br/>
                                 <a href="{{ route('register') }}">Sign up</a>
-                            </center> -->                     
+                            </center>                     
                         </div>
                     </div>                  
                 </form> 
