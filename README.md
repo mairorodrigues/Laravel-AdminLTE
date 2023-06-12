@@ -24,7 +24,10 @@ Start a new Laravel 8 project with the AdminLTE template installed.
 ```php
 ln -s public_html/laravel-adminlte/vendor/almasaeed2010/adminlte public_html/laravel-adminlte/public/assets/adminlte
 ```
+
 7) Run
+```php artisan key:generate
+```
 ```php
 php artisan migrate
 ```
