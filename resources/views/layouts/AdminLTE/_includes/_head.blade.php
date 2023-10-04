@@ -32,11 +32,11 @@
 <!-- Google Font -->
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 <!-- CSS Custom -->
-<link rel="stylesheet" href="{{ asset('assets/custom/style.css') }}">
+<link rel="stylesheet" href="{{ asset('custom/style.css') }}">
 <!-- jQuery 3 -->
 <script src="{{ asset('assets/adminlte/bower_components/jquery/dist/jquery.min.js') }}"></script>
 <!-- MAskMoney -->
-<script src="{{ asset('assets/plugins/maskMoney/jquery.maskMoney.min.js') }}"></script>
+<script src="{{ asset('plugins/maskMoney/jquery.maskMoney.min.js') }}"></script>
 <style>
         .link_menu_page{ color:#222d32; }
         .caixa-alta { text-transform:uppercase; }
