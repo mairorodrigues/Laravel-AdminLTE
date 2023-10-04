@@ -4,11 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Role;
+use App\Models\PermissionGroup; 
 
 class Permission extends Model
 {
 	protected $fillable = [
-        'name', 'label',
+        'permission_group_id', 'name', 'label',
     ];
 
 	public function roles()
@@ -43,5 +44,10 @@ class Permission extends Model
         }
 
         return $permissions_ids;
+    }
+
+    public function permissionGroup()
+    {
+        return $this->belongsTo(PermissionGroup::class, 'permission_group_id');
     }
 }

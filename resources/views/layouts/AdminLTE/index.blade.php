@@ -40,14 +40,14 @@
                 </nav>  
 
                 @if(Session::has('flash_message'))
-                    
-                    <div class="{{ Session::get('flash_message')['class'] }}" style="padding: 10px 20px;" id="flash_message">
-                        <div style="color: #fff; display: inline-block; margin-right: 10px;">
+
+                    <div class="{{ Session::get('flash_message')['class'] }} flash-message" id="flash_message">
+                        <div style="color: #fff; display: inline-block; margin-right: 10px; font-weight: bold;">
                             {!! Session::get('flash_message')['msg'] !!}
                         </div> 
                     </div>
-
-                @endif                
+                    
+                @endif               
                 
                 <section class="content">
 

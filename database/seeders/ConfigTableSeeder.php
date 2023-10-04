@@ -29,6 +29,8 @@ class ConfigTableSeeder extends Seeder
             'layout'  => 'fixed', //String -> defaut: 'fixed'
             'skin'  => 'blue', //String -> defaut: 'blue'
             'favicon'  => 'img/config/favicon.png', //String
+            'default_role_id'  => '2', //String
+            'register'  => 'T', // 'T' or 'F'
         ]);
     }
 }
