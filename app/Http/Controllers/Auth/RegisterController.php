@@ -63,12 +63,16 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
+        $user = User::create([
             'active' => 1,
             'avatar' => 'img/config/nopic.png',
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
+        
+        $user->roles()->sync('2'); // role id for those who register in the system
+
+        return $user;
     }
 }
