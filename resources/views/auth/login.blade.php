@@ -67,8 +67,10 @@
                         <br/><br/><br/>
                         <div class="col-xs-12 text-center">                            
                             <a href="{{ route('password.request') }}">Forgot password?</a>
-                            <br/>
-                            <a href="{{ route('register') }}">Sign up</a>                                            
+                            @if(\App\Models\Config::find(1)->register == 'T')
+                                <br/>
+                                <a href="{{ route('register') }}">Sign up</a>    
+                            @endif                                        
                         </div>
                     </div>                  
                 </form> 

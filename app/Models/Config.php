@@ -10,6 +10,6 @@ class Config extends Model
         'app_name', 'app_name_abv', 'app_slogan',
         'captcha', 'datasitekey', 'recaptcha_secret',
         'img_login', 'caminho_img_login', 'tamanho_img_login',
-        'titulo_login', 'layout', 'skin', 'favicon'
+        'titulo_login', 'layout', 'skin', 'favicon', 'default_role_id', 'register'
     ];
 }

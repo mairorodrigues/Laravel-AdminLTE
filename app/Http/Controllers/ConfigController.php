@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Config;
 use App\Http\Requests\ConfigRequest;
+use App\Models\PermissionGroup; 
+use App\Models\Permission; 
+use App\Models\Role; 
 use Gate;
 use App;
 
@@ -12,11 +15,18 @@ class ConfigController extends Controller
 {    
     public function index()
     {
+
         $config = Config::find(1);
 
         $this->authorize('root-dev', $config);
+
+		$roles = Role::all(); 
+
+		$permission_groups = PermissionGroup::paginate(15);
+
+		$permissions = Permission::paginate(15);
            	
-    	return view('config.index',compact('config'));
+    	return view('config.index',compact('config', 'permission_groups', 'permissions', 'roles'));
     }
 
     public function update(ConfigRequest $request, $id)
@@ -40,6 +50,50 @@ class ConfigController extends Controller
     	}
 
         $this->flashMessage('check', 'Application settings updated successfully!', 'success');
+
+    	return redirect()->route('config');
+    }
+
+    public function storePermissionGroup(Request $request)
+    {
+        $this->authorize('root-dev', Config::class);
+
+        $permission_group = PermissionGroup::create($request->all());
+
+        $this->flashMessage('check', 'Permission Group successfully added!', 'success');
+
+        return redirect()->route('config');
+    }
+
+    public function updatePermissionGroup(Request $request, $id)
+    {   
+        $this->authorize('root-dev', Config::class);
+
+    	PermissionGroup::find($id)->update($request->all());    	
+
+        $this->flashMessage('check', 'Permission Group updated successfully!', 'success');
+
+    	return redirect()->route('config');
+    }
+
+    public function storePermission(Request $request)
+    {
+        $this->authorize('root-dev', Config::class);
+
+        $permission = Permission::create($request->all());
+
+        $this->flashMessage('check', 'Permission successfully added!', 'success');
+
+        return redirect()->route('config');
+    }
+
+    public function updatePermission(Request $request, $id)
+    {   
+        $this->authorize('root-dev', Config::class);
+
+    	Permission::find($id)->update($request->all());    	
+
+        $this->flashMessage('check', 'Permission updated successfully!', 'success');
 
     	return redirect()->route('config');
     }

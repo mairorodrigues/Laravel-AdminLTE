@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use App\Models\Config;
 
 class RegisterController extends Controller
 {
@@ -70,8 +71,10 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
+
+        $configs = Config::find(1);
         
-        $user->roles()->sync('2'); // role id for those who register in the system
+        $user->roles()->sync($configs->default_role_id); // role id for those who register in the system
 
         return $user;
     }

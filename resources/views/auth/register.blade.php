@@ -1,4 +1,9 @@
-
+@if(\App\Models\Config::find(1)->register != 'T')
+    @php
+        header("Location: /");
+        exit();
+    @endphp
+@endif
 
 @section('title', 'Register')
 @section('layout_css')

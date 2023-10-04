@@ -89,5 +89,3 @@
 	</div>    
 
 @endsection
-
-@include('layouts.AdminLTE._includes._data_tables')
