@@ -8,12 +8,16 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use App\Models\Role;
 use App\Models\Permission;
 use Cache;
+use App\Models\Config;
+use Lab404\Impersonate\Models\Impersonate;
 
 class User extends Authenticatable
 {
     use Notifiable;
 
     use HasFactory;
+
+    use Impersonate;
 
     /**
      * The attributes that are mass assignable.
@@ -33,6 +37,11 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+    public function canImpersonate(): bool
+    {
+        return $this->can('root-dev', '');
+    }
+    
     public function roles()
     {
         return $this->belongsToMany(Role::class);

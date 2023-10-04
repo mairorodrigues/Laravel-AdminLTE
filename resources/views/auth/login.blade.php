@@ -16,6 +16,9 @@
 
     </head>
     <body class="hold-transition login-page">
+        <div class="hidden-lg hidden-md hidden-sm">
+            <br/><br/>
+        </div>
         <div id="box-login-personalize">
             <div class="login-logo">
                 
@@ -50,23 +53,22 @@
                         @endif
                     </div>
                     <div class="row">  
-                        <!--<div class="col-xs-8">
+                        <div class="col-xs-12">
                           <div class="checkbox icheck">
                             <label>
                               <input name="remember" type="checkbox" {{ old('remember') ? 'checked' : '' }}> Remember me
                             </label>
                           </div>
-                        </div>-->
+                        </div>
+                        <br/><br/><br/>
                         <div class="col-xs-12">
                           <button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
                         </div>  
                         <br/><br/><br/>
-                        <div class="col-xs-12">
-                            <center>
-                                <a href="{{ route('password.request') }}">Forgot password?</a>
-                                <br/>
-                                <a href="{{ route('register') }}">Sign up</a>
-                            </center>                     
+                        <div class="col-xs-12 text-center">                            
+                            <a href="{{ route('password.request') }}">Forgot password?</a>
+                            <br/>
+                            <a href="{{ route('register') }}">Sign up</a>                                            
                         </div>
                     </div>                  
                 </form> 

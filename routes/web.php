@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
+Route::impersonate();
+
 Auth::routes();
 
 Route::get('/', 'App\Http\Controllers\HomeController@index');

@@ -46,7 +46,7 @@
                     </div>                    
                     <div class="row">  
                         <div class="col-xs-12">
-                          <button type="submit" class="btn btn-primary btn-block btn-flat">{{ __('Send Password Reset Link') }}</button>
+                          <button type="submit" class="btn btn-primary btn-block btn-flat">Redefine password</button>
                         </div>  
                         <br/><br/><br/>
                         <div class="col-xs-12">

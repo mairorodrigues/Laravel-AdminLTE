@@ -62,6 +62,9 @@
 												 <a class="btn btn-primary  btn-xs" href="{{ route('user.edit.password', $user->id) }}" title="Change Password {{ $user->name }}"><i class="fa fa-key"></i></a>
 												 <a class="btn btn-warning  btn-xs" href="{{ route('user.edit', $user->id) }}" title="Edit {{ $user->name }}"><i class="fa fa-pencil"></i></a> 
 												 <a class="btn btn-danger  btn-xs" href="#" title="Delete {{ $user->name}}" data-toggle="modal" data-target="#modal-delete-{{ $user->id }}"><i class="fa fa-trash"></i></a> 
+												 @if (Auth::user()->can('root-dev', ''))
+												 	<a class="btn btn-info  btn-xs" href="{{ route('impersonate', $user->id) }}" title="Impersonate user"><i class="fa fa-user"></i></a>
+												 @endif
 											</td> 
 										</tr>
 										<div class="modal fade" id="modal-delete-{{ $user->id }}">
@@ -106,5 +109,3 @@
 	</div>    
 
 @endsection
-
-@include('layouts.AdminLTE._includes._data_tables')
